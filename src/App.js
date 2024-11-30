@@ -1,25 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+
+// // Import Home component
+// import Header from './components/filter/Header';
+// import Home from './components/home/Home';
+
+// import FilterOption from './components/filter/FilterOption';
+
+// function App() {
+//   return (
+//     <>
+//     <main className = 'container-fluid'>
+//      <Home/>
+//      <Header/>
+//      <FilterOption/>
+//     </main>
+//     </>
+//   );
+// }
+
+// export default App;
+
+
+
+
+
+
+
+import { Route, Routes,} from "react-router-dom";
+import QuickSearch from "./components/filter/QuickSearch";
+import Home from "./components/home/Home";
+import Restaurant from "./components/restaurant/Restaurant";
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <main className="container-fluid">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/quick-search/:meal_id" element={<QuickSearch />} />
+          <Route path="/restaurant/:id" element={<Restaurant/>} />
+        
+        </Routes>
+        {/* <Home/>
+        <QuickSearch/> */}
+      </main>
+    </>
   );
 }
 
 export default App;
+
+
+
+
